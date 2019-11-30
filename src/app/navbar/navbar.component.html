@@ -1,9 +1,12 @@
 <div class="navbar">
     <nav>
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul *ngIf="links">
+
+        <li *ngFor="let link of links">
+          <a href="#">{{ link | uppercase }}</a>
+        </li>
+
       </ul>
     </nav>
 </div>
+
