@@ -13,12 +13,17 @@ export class MainComponent implements OnInit {
 
   users: any;
 
+  counter: number = 0;
+
   hide() {
     this.isClicked = false;
   }
 
-  constructor(private userService: UserService) { }
+  onCount() {
+    return this.counter += 1;
+  }
 
+  constructor(private userService: UserService) { }
   ngOnInit() {
     this.userService.getUsers().subscribe(
       response => {

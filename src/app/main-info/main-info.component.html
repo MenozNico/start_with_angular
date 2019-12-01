@@ -1,0 +1,8 @@
+
+<div *ngIf="user.id > 5" class="panel">
+    <td>Company: {{ user.company.name }}</td>
+
+    <button *ngIf="user.id === 6" (click)="count.emit()">Increment</button>
+
+</div>
+

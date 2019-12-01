@@ -11,20 +11,34 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 
+import { RouterModule, Routes } from '@angular/router';
+import { NewsComponent } from './news/news.component';
+import { ContactComponent } from './contact/contact.component';
+import { MainInfoComponent } from './main-info/main-info.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    NewsComponent,
+    ContactComponent,
     NavbarComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    MainInfoComponent
   ],
+
   imports: [
-
     BrowserModule,
-    HttpClientModule
-
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'home', component: HomeComponent },
+      { path: 'news', component: NewsComponent },
+      { path: 'contact', component: ContactComponent }
+    ])
   ],
+
   providers: [UserService],
   bootstrap: [AppComponent]
 })

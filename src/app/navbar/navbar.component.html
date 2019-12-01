@@ -1,9 +1,10 @@
+
 <div class="navbar">
     <nav>
       <ul *ngIf="links">
 
         <li *ngFor="let link of links">
-          <a href="#">{{ link | uppercase }}</a>
+          <a routerLink="{{ link }}" routerLinkActive="active">{{ link | uppercase }}</a>
         </li>
 
       </ul>
